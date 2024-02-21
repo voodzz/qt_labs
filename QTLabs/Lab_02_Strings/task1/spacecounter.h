@@ -4,20 +4,22 @@
 #include <QTextStream>
 #include <QString>
 #include "command.h"
+#include "sentence.h"
 
 class SpaceCounter : public Command
 {
 public:
-    SpaceCounter(const QString& sentence): Command(sentence) {};
-    SpaceCounter(const std::string& sentence): Command(sentence.c_str()) {};
-    SpaceCounter(const char* sentence): Command(sentence) {};
+    // SpaceCounter(const QString& sentence);
+    // SpaceCounter(const std::string& sentence);
+    // SpaceCounter(const char* sentence);
+    SpaceCounter(Sentence& sentence);
 
     ~SpaceCounter() override = default;
 
     SpaceCounter(const SpaceCounter& other) = default;
-    SpaceCounter& operator=(const SpaceCounter& other) = default;
+    SpaceCounter& operator=(const SpaceCounter& other) = delete;
     SpaceCounter(SpaceCounter&& other) = default;
-    SpaceCounter& operator=(SpaceCounter&& other) = default;
+    SpaceCounter& operator=(SpaceCounter&& other) = delete;
 
     virtual void execute() override;
 };
