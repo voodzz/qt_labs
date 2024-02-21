@@ -20,8 +20,6 @@ public:
     ArrayFiller& operator=(ArrayFiller&& other) = default;
 
     void execute() override;
-private:
-    QString sentence_;
 };
 
 #endif // ARRAYFILLER_H

@@ -8,9 +8,9 @@
 class SpaceCounter : public Command
 {
 public:
-    SpaceCounter(const QString& sentence): sentence_(sentence) {};
-    SpaceCounter(const std::string& sentence): sentence_(sentence.c_str()) {};
-    SpaceCounter(const char* sentence): sentence_(sentence) {};
+    SpaceCounter(const QString& sentence): Command(sentence) {};
+    SpaceCounter(const std::string& sentence): Command(sentence.c_str()) {};
+    SpaceCounter(const char* sentence): Command(sentence) {};
 
     ~SpaceCounter() override = default;
 
@@ -20,9 +20,6 @@ public:
     SpaceCounter& operator=(SpaceCounter&& other) = default;
 
     virtual void execute() override;
-
-private:
-    QString sentence_;
 };
 
 #endif // SPACECOUNTER_H
