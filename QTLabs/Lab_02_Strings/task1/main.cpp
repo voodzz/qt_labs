@@ -12,9 +12,9 @@ int main() {
     // tmp.execute();
     // DifferentWords str("Why why why do we have to do this... stupid lab????");
     // str.execute();
-    Sentence sentenceForTask1("I know you will          be a star in            somebody's sky...");
+    Sentence sentenceForTask1("I know you will          be a star in            somebody else's sky...");
     Sentence sentenceForTask2("But why, why can't it be... can't it be mine?");
-    Sentence sentenceForTask3("Why why why do we have to do this... stupid lab????");
+    Sentence sentenceForTask3("Never gonna give you up, never gonna let you down, never gonna run around and desert you");
 
     SpaceCounter task1(sentenceForTask1);
     ArrayFiller task2(sentenceForTask2);
