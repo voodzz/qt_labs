@@ -1,4 +1,4 @@
-#include <iostream>
+#include <QTextStream>
 #include <QStringList>
 #include <QSet>
 #include "sentence.h"
@@ -19,6 +19,8 @@ Sentence::Sentence(const char* sentence) : sentence_(sentence) {}
 
 Sentence::Sentence(const std::string& sentence) : Sentence(sentence.c_str()) {}
 
+QTextStream out(stdout);
+
 void Sentence::PerformTaskOne() {
     uint16_t counter = 0;
     uint16_t max = 0;
@@ -32,7 +34,7 @@ void Sentence::PerformTaskOne() {
             max = counter;
         }
     }
-    std::cout << "The maximum number of consecutive spaces is " << max << '.' << std::endl << std::endl;
+    out << "The maximum number of consecutive spaces is " << max << '.' << Qt::endl << Qt::endl;
 }
 
 void Sentence::PerformTaskTwo() {
@@ -62,18 +64,18 @@ void Sentence::PerformTaskTwo() {
     //     ++j;
     // }
 
-    QStringList words = sentence_.split(' ');
+    out << "The array is: ";
 
-    std::cout << "The array is: ";
+    QStringList words = sentence_.split(' ');
 
     for (int i = 0; i != words.size(); ++i) {
         if (i != words.size() - 1) {
-            std::cout << words[i].toStdString() << ", ";
+            out << words[i] << ", ";
         } else {
-            std::cout << words[i].toStdString() << ".\n";
+            out << words[i] << ".\n";
         }
     }
-    std::cout << '\n';
+    out << '\n';
 }
 
 void Sentence::PerformTaskThree() {
@@ -112,9 +114,9 @@ void Sentence::PerformTaskThree() {
     }
     words.clear();
 
-    std::cout << "All the different words from the sentence:\n";
+    out << "All the different words from the sentence:\n";
     for (const auto& word : result) {
-        std::cout << word.toStdString() << '\n';
+        out << word << '\n';
     }
-    std::cout << '\n';
+    out << '\n';
 }

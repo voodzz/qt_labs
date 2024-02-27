@@ -1,7 +1,7 @@
 #ifndef TASK_H
 #define TASK_H
 
-#include <vector>
+#include <QVector>
 #include "command.h"
 
 // Invoker
@@ -18,7 +18,7 @@ public:
     void addCommand(Command* command);
     void performTask(int number);
 private:
-    std::vector<Command*> commands;
+    QVector<Command*> commands;
 };
 
 #endif // TASK_H
