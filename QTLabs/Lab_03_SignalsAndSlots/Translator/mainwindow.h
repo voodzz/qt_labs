@@ -21,7 +21,7 @@ private:
     Ui::MainWindow *ui;
 
 private slots:
-    void slotTranslate();
-    void slotSwitch();
+    void slotConvertTextEdit();
+    void slotConvertTextEdit_2();
 };
 #endif // MAINWINDOW_H
