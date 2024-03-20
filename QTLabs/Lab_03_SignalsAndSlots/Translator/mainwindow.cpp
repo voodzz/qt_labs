@@ -49,7 +49,7 @@ void MainWindow::slotConvertTextEdit() {
     bool ok;
     qint64 number = (ui->textEdit->toPlainText()).toLongLong(&ok, inputNumeralSystem);
     QString result = QString::number(number, outputNumeralSystem);
-    ui->textEdit_2->setText(result);
+    ui->textEdit_2->setText(result.toUpper());
     ui->textEdit_2->blockSignals(false);
 }
 
@@ -84,6 +84,6 @@ void MainWindow::slotConvertTextEdit_2() {
     bool ok;
     qint64 number = (ui->textEdit_2->toPlainText()).toLongLong(&ok, inputNumeralSystem);
     QString result = QString::number(number, outputNumeralSystem);
-    ui->textEdit->setText(result);
+    ui->textEdit->setText(result.toUpper());
     ui->textEdit->blockSignals(false);
 }
