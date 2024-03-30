@@ -2,8 +2,6 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QLabel>
-#include <QVector>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -21,10 +19,12 @@ public:
 
 private:
     Ui::MainWindow *ui;
-    QVector<QLabel*> labels;
 
 private slots:
-    void keyPressEvent(QKeyEvent* event) override;
-    void mousePressEvent(QMouseEvent* event) override;
+    void on_checkBox_stateChanged(int arg1);
+    void on_checkBox_2_stateChanged(int arg1);
+    void on_checkBox_5_stateChanged(int arg1);
+    void on_checkBox_3_stateChanged(int arg1);
+    void on_checkBox_4_stateChanged(int arg1);
 };
 #endif // MAINWINDOW_H

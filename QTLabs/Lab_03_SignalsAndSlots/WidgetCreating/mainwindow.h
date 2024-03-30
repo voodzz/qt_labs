@@ -2,8 +2,6 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QLabel>
-#include <QVector>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -19,12 +17,10 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
-    QVector<QLabel*> labels;
-
-private slots:
-    void keyPressEvent(QKeyEvent* event) override;
-    void mousePressEvent(QMouseEvent* event) override;
 };
 #endif // MAINWINDOW_H

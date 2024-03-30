@@ -4,5 +4,13 @@
         <file>icons/black_cross.png</file>
         <file>icons/icon.png</file>
         <file>icons/bg.png</file>
+        <file>icons/black_cross_for_field.png</file>
+        <file>icons/black_circle_for_field.png</file>
+        <file>icons/black_loss_circle_for_field.png</file>
+        <file>icons/black_loss_cross_for_field.png</file>
+        <file>icons/black_win_circle_for_field.png</file>
+        <file>icons/black_win_cross_for_field.png</file>
+        <file>icons/black_circle_icon.png</file>
+        <file>icons/black_cross_icon.png</file>
     </qresource>
 </RCC>

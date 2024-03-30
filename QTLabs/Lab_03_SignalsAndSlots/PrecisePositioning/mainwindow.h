@@ -2,8 +2,6 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QLabel>
-#include <QVector>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -21,10 +19,8 @@ public:
 
 private:
     Ui::MainWindow *ui;
-    QVector<QLabel*> labels;
 
 private slots:
-    void keyPressEvent(QKeyEvent* event) override;
-    void mousePressEvent(QMouseEvent* event) override;
+    void updateButtonPosition();
 };
 #endif // MAINWINDOW_H
