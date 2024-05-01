@@ -252,11 +252,16 @@ void Widget::drawLinear(QTransform& transform) {
 void Widget::drawQuadratic(QTransform& transform) {
     QPainterPath path;
     int counter = 0;
+    qreal prevX = x_min;
     for (qreal x = x_min; x <= x_max; x += 0.001) {
         qreal y = quadraticEquation(x);
         if (y >= y_min && y <= y_max) {
             ++counter;
             QPointF point = transform.map(QPointF(x, y));
+            if (x > prevX + 0.001) {
+                path.moveTo(point.x(), point.y());
+            }
+            prevX = x;
             if (counter == 1) {
                 path.moveTo(point.x(), point.y());
             } else {
@@ -270,11 +275,16 @@ void Widget::drawQuadratic(QTransform& transform) {
 void Widget::drawCubic(QTransform &transform) {
     QPainterPath path;
     int counter = 0;
+    qreal prevX = x_min;
     for (qreal x = x_min; x <= x_max; x += 0.001) {
         qreal y = cubicEquation(x);
         if (y >= y_min && y <= y_max) {
             ++counter;
             QPointF point = transform.map(QPointF(x, y));
+            if (x > prevX + 0.001) {
+                path.moveTo(point.x(), point.y());
+            }
+            prevX = x;
             if (counter == 1) {
                 path.moveTo(point.x(), point.y());
             } else {
