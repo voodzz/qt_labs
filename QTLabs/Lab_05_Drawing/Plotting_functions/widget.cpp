@@ -1,8 +1,10 @@
 #include <QString>
 #include <QPainter>
 #include <QPainterPath>
+#include <QtMath>
 #include "widget.h"
 #include "ui_widget.h"
+
 
 Widget::Widget(QWidget *parent) : QWidget(parent), ui(new Ui::Widget), scene_(new QGraphicsScene(this)) {
     this->setFixedSize(1706, 960);
@@ -18,8 +20,6 @@ Widget::Widget(QWidget *parent) : QWidget(parent), ui(new Ui::Widget), scene_(ne
 
     drawCoordNetAndAxes();
 }
-
-//void Widget::paintEvent(QPaintEvent *event) {}
 
 Widget::~Widget() {
     delete ui;
@@ -193,53 +193,159 @@ void Widget::drawGraph() {
     transform.scale(10, -10); // "переворачиваем" ось y и умнажем на выбранный парамметр
 
     switch (index) {
-    case 0: {
-        qreal x1 = x_min;
-        qreal y1 = a_ * x1 + b_;
-
-        qreal x2 = x_max;
-        qreal y2 = a_ * x2 + b_;
-
-        if (y1 < y_min) {
-            y1 = y_min;
-            x1 = (y1 - b_)/a_;
-        }
-        if (y1 >y_max) {
-            y1 = y_max;
-            x1 = (y1 - b_)/a_;
-        }
-        if (y2< y_min) {
-            y2 = y_min;
-            x2 = (y2 - b_)/a_;
-        }
-        if (y2 > y_max) {
-            y2 = y_max;
-            x2 = (y2 - b_)/a_;
-        }
-
-        QPointF p1 = transform.map(QPointF(x1, y1));
-        QPointF p2 = transform.map(QPointF(x2, y2));
-
-        scene_->addLine(p1.x(), p1.y(), p2.x(), p2.y(), pen_);
+    case 0:
+        drawLinear(transform);
         break;
-    }
-    case 3: {
-        QPointF topLeft = transform.map(QPointF(-r_, r_));
-        QPointF topRight = transform.map(QPointF(r_, -r_));
-
-        scene_->addEllipse(QRectF(topLeft, topRight), pen_, Qt::NoBrush);
+    case 1:
+        drawQuadratic(transform);
         break;
-    }
-    case 4: {
-        QPointF topLeft = transform.map(QPointF(-a_, b_));
-        QPointF topRight = transform.map(QPointF(a_, -b_));
-
-        scene_->addEllipse(QRectF(topLeft, topRight), pen_, Qt::NoBrush);
+    case 2:
+        drawCubic(transform);
         break;
-    }
+    case 3:
+        drawCircle(transform);
+        break;
+    case 4:
+        drawEllipse(transform);
+        break;
+    case 5:
+        drawExp(transform);
+        break;
+    case 6:
+        drawArbitrary(transform);
+        break;
+    default:
+        break;
     }
 }
 
+void Widget::drawLinear(QTransform& transform) {
+    qreal x1 = x_min;
+    qreal y1 = a_ * x1 + b_;
+
+    qreal x2 = x_max;
+    qreal y2 = a_ * x2 + b_;
+
+    if (y1 < y_min) {
+        y1 = y_min;
+        x1 = (y1 - b_)/a_;
+    }
+    if (y1 >y_max) {
+        y1 = y_max;
+        x1 = (y1 - b_)/a_;
+    }
+    if (y2< y_min) {
+        y2 = y_min;
+        x2 = (y2 - b_)/a_;
+    }
+    if (y2 > y_max) {
+        y2 = y_max;
+        x2 = (y2 - b_)/a_;
+    }
+
+    QPointF p1 = transform.map(QPointF(x1, y1));
+    QPointF p2 = transform.map(QPointF(x2, y2));
+
+    scene_->addLine(p1.x(), p1.y(), p2.x(), p2.y(), pen_);
+}
+
+void Widget::drawQuadratic(QTransform& transform) {
+    QPainterPath path;
+    int counter = 0;
+    for (qreal x = x_min; x <= x_max; x += 0.001) {
+        qreal y = quadraticEquation(x);
+        if (y >= y_min && y <= y_max) {
+            ++counter;
+            QPointF point = transform.map(QPointF(x, y));
+            if (counter == 1) {
+                path.moveTo(point.x(), point.y());
+            } else {
+                path.lineTo(point.x(), point.y());
+            }
+        }
+    }
+    scene_->addPath(path, pen_);
+}
+
+void Widget::drawCubic(QTransform &transform) {
+    QPainterPath path;
+    int counter = 0;
+    for (qreal x = x_min; x <= x_max; x += 0.001) {
+        qreal y = cubicEquation(x);
+        if (y >= y_min && y <= y_max) {
+            ++counter;
+            QPointF point = transform.map(QPointF(x, y));
+            if (counter == 1) {
+                path.moveTo(point.x(), point.y());
+            } else {
+                path.lineTo(point.x(), point.y());
+            }
+        }
+    }
+    scene_->addPath(path, pen_);
+}
+
+void Widget::drawCircle(QTransform &transform) {
+    QPointF topLeft = transform.map(QPointF(-r_, r_));
+    QPointF topRight = transform.map(QPointF(r_, -r_));
+
+    scene_->addEllipse(QRectF(topLeft, topRight), pen_, Qt::NoBrush);
+}
+
+void Widget::drawEllipse(QTransform &transform) {
+    QPointF topLeft = transform.map(QPointF(-a_, b_));
+    QPointF topRight = transform.map(QPointF(a_, -b_));
+
+    scene_->addEllipse(QRectF(topLeft, topRight), pen_, Qt::NoBrush);
+}
+
+void Widget::drawExp(QTransform &transform) {
+    QPainterPath path;
+    int counter = 0;
+    for (qreal x = x_min; x <= x_max; x += 0.001) {
+        qreal y = qExp(x);
+        if (y >= y_min && y <= y_max) {
+            ++counter;
+            QPointF point = transform.map(QPointF(x, y));
+            if (counter == 1) {
+                path.moveTo(point.x(), point.y());
+            } else {
+                path.lineTo(point.x(), point.y());
+            }
+        }
+    }
+    scene_->addPath(path, pen_);
+}
+
+void Widget::drawArbitrary(QTransform &transform) {
+    QPainterPath path;
+    int counter = 0;
+    for (qreal x = x_min; x <= x_max; x += 0.001) {
+        qreal y = arbitraryFunction(x);
+        if (y >= y_min && y <= y_max) {
+            ++counter;
+            QPointF point = transform.map(QPointF(x, y));
+            if (counter == 1) {
+                path.moveTo(point.x(), point.y());
+            } else {
+                path.lineTo(point.x(), point.y());
+            }
+        }
+    }
+    scene_->addPath(path, pen_);
+}
+
+qreal Widget::quadraticEquation(qreal x) {
+    return (a_* x * x + b_ * x +c_);
+}
+
+qreal Widget::cubicEquation(qreal x) {
+    return (a_* x * x * x + b_ * x * x +c_ * x + d_);
+}
+
+qreal Widget::arbitraryFunction(qreal x) {
+    return (a_*qPow(x, b_) + qSin(c_*x));
+}
 
 void Widget::on_pushButton_clicked() {
     scene_->clear();

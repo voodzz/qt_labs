@@ -26,8 +26,6 @@ public:
     Widget(Widget&& other) = delete;
     Widget& operator =(Widget&& other) = delete;
 
-    //void paintEvent(QPaintEvent* event) override;
-
 private slots:
     void on_lineEdit_textChanged(const QString &arg1);
     void on_lineEdit_2_textChanged(const QString &arg1);
@@ -62,5 +60,17 @@ private:
 
     void drawCoordNetAndAxes();
     void drawGraph();
+    void drawLinear(QTransform& transform);
+    void drawQuadratic(QTransform& transform);
+    void drawCubic(QTransform& transform);
+    void drawCircle(QTransform& transform);
+    void drawEllipse(QTransform& transform);
+    void drawExp(QTransform& transform);
+    void drawArbitrary(QTransform& transform);
+
+    qreal quadraticEquation(qreal x);
+    qreal cubicEquation(qreal x);
+    qreal arbitraryFunction(qreal x);
 };
+
 #endif // WIDGET_H
