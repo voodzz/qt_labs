@@ -58,7 +58,7 @@ private:
     qreal d_ = 0;
     qreal r_ = 0;
 
-    void drawCoordNet();
+    void drawCoordNetAndAxes();
     void drawGraph();
 };
 #endif // WIDGET_H

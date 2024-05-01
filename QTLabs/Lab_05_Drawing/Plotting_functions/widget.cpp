@@ -16,7 +16,7 @@ Widget::Widget(QWidget *parent) : QWidget(parent), ui(new Ui::Widget), scene_(ne
     ui->lineEdit_17->setDisabled(true);
     ui->graphicsView->setRenderHint(QPainter::Antialiasing);
 
-    drawCoordNet();
+    drawCoordNetAndAxes();
 }
 
 //void Widget::paintEvent(QPaintEvent *event) {}
@@ -114,7 +114,7 @@ void Widget::on_comboBox_currentIndexChanged(int index) {
     }
 }
 
-void Widget::drawCoordNet() {
+void Widget::drawCoordNetAndAxes() {
     qreal fieldWidth = ui->graphicsView->width();
     qreal fieldHeight = ui->graphicsView->height();
 
@@ -122,10 +122,10 @@ void Widget::drawCoordNet() {
     pen_.setWidth(1);
 
     // рисуем вертикальные линии сетки
-    for (int x = fieldWidth/2.0 + 10; x <= fieldWidth; x += 10) {
+    for (qreal x = fieldWidth/2.0 + 10; x <= fieldWidth; x += 10) {
         scene_->addLine(x, 0, x, fieldHeight, pen_);
     }
-    for (int x = fieldWidth/2 - 10; x >= 0; x -= 10) {
+    for (qreal x = fieldWidth/2.0 - 10; x >= 0; x -= 10) {
         scene_->addLine(x, 0, x, fieldHeight, pen_);
     }
 
@@ -133,7 +133,7 @@ void Widget::drawCoordNet() {
     scene_->addLine(0, fieldHeight/2, fieldWidth, fieldHeight/2, pen_);
 
     // рисуем горизонтальные линии сетки
-    for (int y = fieldHeight/2 + 10; y <= fieldHeight; y += 10) {
+    for (qreal y = fieldHeight/2 + 10; y <= fieldHeight; y += 10) {
         scene_->addLine(0, y, fieldWidth, y, pen_);
     }
     for (int y = fieldHeight/2 - 10; y >= 0; y -= 10) {
@@ -190,7 +190,7 @@ void Widget::drawGraph() {
     transform.scale(10, -10); // "переворачиваем" ось y и умнажем на выбранный парамметр
 
     switch (index) {
-    case 0:
+    case 0: {
         qreal x1 = x_min;
         qreal y1 = a_ * x1 + b_;
 
@@ -220,12 +220,13 @@ void Widget::drawGraph() {
         scene_->addLine(p1.x(), p1.y(), p2.x(), p2.y(), pen_);
         break;
     }
+    }
 }
 
 
 void Widget::on_pushButton_clicked() {
     scene_->clear();
-    drawCoordNet();
+    drawCoordNetAndAxes();
     drawGraph();
 }
 
