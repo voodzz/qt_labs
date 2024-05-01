@@ -48,12 +48,12 @@ private:
 
     QPen pen_;
 
-    qreal x_min = 20;
-    qreal x_max = 40;
-    qreal y_min = -20;
-    qreal y_max = 40;
-    qreal a_ = 0.1;
-    qreal b_ = 0.5;
+    qreal x_min = 0;
+    qreal x_max = 0;
+    qreal y_min = 0;
+    qreal y_max = 0;
+    qreal a_ = 0;
+    qreal b_ = 0;
     qreal c_ = 0;
     qreal d_ = 0;
     qreal r_ = 0;

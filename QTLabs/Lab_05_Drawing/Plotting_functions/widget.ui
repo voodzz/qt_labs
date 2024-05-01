@@ -97,7 +97,7 @@
      <item row="6" column="1">
       <widget class="QLineEdit" name="lineEdit_2">
        <property name="text">
-        <string>40</string>
+        <string/>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -208,16 +208,6 @@
        </property>
       </widget>
      </item>
-     <item row="14" column="1">
-      <widget class="QLineEdit" name="lineEdit_6">
-       <property name="text">
-        <string>0.5</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
      <item row="13" column="0" colspan="2">
       <widget class="Line" name="line_4">
        <property name="orientation">
@@ -241,16 +231,6 @@
      </item>
      <item row="16" column="1">
       <widget class="QLineEdit" name="lineEdit_7">
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item row="8" column="1">
-      <widget class="QLineEdit" name="lineEdit_3">
-       <property name="text">
-        <string>40</string>
-       </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
        </property>
@@ -356,7 +336,7 @@
      <item row="10" column="1">
       <widget class="QLineEdit" name="lineEdit_4">
        <property name="text">
-        <string>20</string>
+        <string/>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -403,7 +383,7 @@
      <item row="12" column="1">
       <widget class="QLineEdit" name="lineEdit_5">
        <property name="text">
-        <string>0.1</string>
+        <string/>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -413,7 +393,7 @@
      <item row="4" column="1">
       <widget class="QLineEdit" name="lineEdit">
        <property name="text">
-        <string>-20</string>
+        <string/>
        </property>
        <property name="frame">
         <bool>true</bool>
@@ -487,6 +467,26 @@
       <widget class="Line" name="line_11">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1">
+      <widget class="QLineEdit" name="lineEdit_3">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="14" column="1">
+      <widget class="QLineEdit" name="lineEdit_6">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>

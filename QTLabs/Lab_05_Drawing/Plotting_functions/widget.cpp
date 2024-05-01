@@ -296,17 +296,51 @@ void Widget::drawCubic(QTransform &transform) {
 }
 
 void Widget::drawCircle(QTransform &transform) {
-    QPointF topLeft = transform.map(QPointF(-r_, r_));
-    QPointF topRight = transform.map(QPointF(r_, -r_));
-
-    scene_->addEllipse(QRectF(topLeft, topRight), pen_, Qt::NoBrush);
+    QPainterPath path;
+    int counter = 0;
+    qreal prevF = 0;
+    for (qreal f = 0; f <= 2*M_PI; f += 0.001) {
+        qreal x = r_*qCos(f);
+        qreal y = r_*qSin(f);
+        if (y >= y_min && y <= y_max && x >= x_min && x <= x_max) {
+            ++counter;
+            QPointF point = transform.map(QPointF(x, y));
+            if (f > prevF + 0.001) {
+                path.moveTo(point.x(), point.y());
+            }
+            prevF = f;
+            if (counter == 1) {
+                path.moveTo(point.x(), point.y());
+            } else {
+                path.lineTo(point.x(), point.y());
+            }
+        }
+    }
+    scene_->addPath(path, pen_);
 }
 
 void Widget::drawEllipse(QTransform &transform) {
-    QPointF topLeft = transform.map(QPointF(-a_, b_));
-    QPointF topRight = transform.map(QPointF(a_, -b_));
-
-    scene_->addEllipse(QRectF(topLeft, topRight), pen_, Qt::NoBrush);
+    QPainterPath path;
+    int counter = 0;
+    qreal prevF = 0;
+    for (qreal f = 0; f <= 2*M_PI; f += 0.001) {
+        qreal x = a_*qCos(f);
+        qreal y = b_*qSin(f);
+        if (y >= y_min && y <= y_max && x >= x_min && x <= x_max) {
+            ++counter;
+            QPointF point = transform.map(QPointF(x, y));
+            if (f > prevF + 0.001) {
+                path.moveTo(point.x(), point.y());
+            }
+            prevF = f;
+            if (counter == 1) {
+                path.moveTo(point.x(), point.y());
+            } else {
+                path.lineTo(point.x(), point.y());
+            }
+        }
+    }
+    scene_->addPath(path, pen_);
 }
 
 void Widget::drawExp(QTransform &transform) {
@@ -330,11 +364,16 @@ void Widget::drawExp(QTransform &transform) {
 void Widget::drawArbitrary(QTransform &transform) {
     QPainterPath path;
     int counter = 0;
+    qreal prevX = x_min;
     for (qreal x = x_min; x <= x_max; x += 0.001) {
         qreal y = arbitraryFunction(x);
         if (y >= y_min && y <= y_max) {
             ++counter;
             QPointF point = transform.map(QPointF(x, y));
+            if (x > prevX + 0.001) {
+                path.moveTo(point.x(), point.y());
+            }
+            prevX = x;
             if (counter == 1) {
                 path.moveTo(point.x(), point.y());
             } else {
@@ -362,6 +401,3 @@ void Widget::on_pushButton_clicked() {
     drawCoordNetAndAxes();
     drawGraph();
 }
-
-
-
