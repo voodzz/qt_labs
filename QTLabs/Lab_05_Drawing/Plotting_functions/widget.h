@@ -39,6 +39,8 @@ private slots:
     void on_lineEdit_8_textChanged(const QString &arg1);
     void on_comboBox_currentIndexChanged(int index);
 
+    void on_pushButton_clicked();
+
 private:
     Ui::Widget *ui;
     QGraphicsScene* scene_;
@@ -54,7 +56,9 @@ private:
     qreal b_ = 0.5;
     qreal c_ = 0;
     qreal d_ = 0;
+    qreal r_ = 0;
 
-    void drawAxes();
+    void drawCoordNet();
+    void drawGraph();
 };
 #endif // WIDGET_H
