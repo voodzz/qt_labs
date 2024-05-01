@@ -41,6 +41,8 @@ private slots:
 
     void on_pushButton_clicked();
 
+    void on_lineEdit_17_textChanged(const QString &arg1);
+
 private:
     Ui::Widget *ui;
     QGraphicsScene* scene_;

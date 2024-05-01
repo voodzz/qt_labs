@@ -57,6 +57,9 @@ void Widget::on_lineEdit_8_textChanged(const QString &arg1) {
     d_ = arg1.toDouble();
 }
 
+void Widget::on_lineEdit_17_textChanged(const QString &arg1) {
+    r_ = arg1.toDouble();
+}
 
 void Widget::on_comboBox_currentIndexChanged(int index) {
     switch (index) {
@@ -220,6 +223,20 @@ void Widget::drawGraph() {
         scene_->addLine(p1.x(), p1.y(), p2.x(), p2.y(), pen_);
         break;
     }
+    case 3: {
+        QPointF topLeft = transform.map(QPointF(-r_, r_));
+        QPointF topRight = transform.map(QPointF(r_, -r_));
+
+        scene_->addEllipse(QRectF(topLeft, topRight), pen_, Qt::NoBrush);
+        break;
+    }
+    case 4: {
+        QPointF topLeft = transform.map(QPointF(-a_, b_));
+        QPointF topRight = transform.map(QPointF(a_, -b_));
+
+        scene_->addEllipse(QRectF(topLeft, topRight), pen_, Qt::NoBrush);
+        break;
+    }
     }
 }
 
@@ -229,4 +246,6 @@ void Widget::on_pushButton_clicked() {
     drawCoordNetAndAxes();
     drawGraph();
 }
+
+
 
