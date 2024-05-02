@@ -254,7 +254,7 @@ void Widget::drawQuadratic(QTransform& transform) {
     int counter = 0;
     qreal prevX = x_min;
     for (qreal x = x_min; x <= x_max; x += 0.001) {
-        qreal y = quadraticEquation(x);
+        qreal y = quadraticFunction(x);
         if (y >= y_min && y <= y_max) {
             ++counter;
             QPointF point = transform.map(QPointF(x, y));
@@ -277,7 +277,7 @@ void Widget::drawCubic(QTransform &transform) {
     int counter = 0;
     qreal prevX = x_min;
     for (qreal x = x_min; x <= x_max; x += 0.001) {
-        qreal y = cubicEquation(x);
+        qreal y = cubicFunction(x);
         if (y >= y_min && y <= y_max) {
             ++counter;
             QPointF point = transform.map(QPointF(x, y));
@@ -384,12 +384,24 @@ void Widget::drawArbitrary(QTransform &transform) {
     scene_->addPath(path, pen_);
 }
 
-qreal Widget::quadraticEquation(qreal x) {
+qreal Widget::linearFunction(qreal x) {
+    return (a_ * x + b_);
+}
+
+qreal Widget::quadraticFunction(qreal x) {
     return (a_* x * x + b_ * x +c_);
 }
 
-qreal Widget::cubicEquation(qreal x) {
+qreal Widget::cubicFunction(qreal x) {
     return (a_* x * x * x + b_ * x * x +c_ * x + d_);
+}
+
+qreal Widget::circleFuntion(qreal x) {
+    return qSqrt(r_ * r_ - x * x);
+}
+
+qreal Widget::ellipseFunction(qreal x) {
+    return (qSqrt(1 - (x * x) / (a_ * a_)) * b_ * b_);
 }
 
 qreal Widget::arbitraryFunction(qreal x) {
@@ -401,3 +413,55 @@ void Widget::on_pushButton_clicked() {
     drawCoordNetAndAxes();
     drawGraph();
 }
+
+void Widget::on_pushButton_2_clicked() {
+    scene_->clear();
+    drawCoordNetAndAxes();
+}
+
+
+void Widget::on_lineEdit_9_textChanged(const QString &arg1) {
+    xForCalculation = arg1.toDouble();
+}
+
+
+void Widget::on_pushButton_3_clicked() {
+    switch (ui->comboBox->currentIndex()) {
+    case 0: {
+        qreal y = linearFunction(ui->lineEdit_9->text().toDouble());
+        ui->lineEdit_10->setText(QString::number(y));
+        break;
+    }
+    case 1: {
+        qreal y = quadraticFunction(ui->lineEdit_9->text().toDouble());
+        ui->lineEdit_10->setText(QString::number(y));
+        break;
+    }
+    case 2: {
+        qreal y = cubicFunction(ui->lineEdit_9->text().toDouble());
+        ui->lineEdit_10->setText(QString::number(y));
+        break;
+    }
+    case 3: {
+        qreal y = circleFuntion(ui->lineEdit_9->text().toDouble());
+        ui->lineEdit_10->setText("±" + QString::number(y));
+        break;
+    }
+    case 4: {
+        qreal y = ellipseFunction(ui->lineEdit_9->text().toDouble());
+        ui->lineEdit_10->setText("±" + QString::number(y));
+        break;
+    }
+    case 5: {
+        qreal y = qExp(ui->lineEdit_9->text().toDouble());
+        ui->lineEdit_10->setText(QString::number(y));
+        break;
+    }
+    case 6: {
+        qreal y = arbitraryFunction(ui->lineEdit_9->text().toDouble());
+        ui->lineEdit_10->setText(QString::number(y));
+        break;
+    }
+    }
+}
+

@@ -41,6 +41,12 @@ private slots:
 
     void on_lineEdit_17_textChanged(const QString &arg1);
 
+    void on_pushButton_2_clicked();
+
+    void on_lineEdit_9_textChanged(const QString &arg1);
+
+    void on_pushButton_3_clicked();
+
 private:
     Ui::Widget *ui;
     QGraphicsScene* scene_;
@@ -58,6 +64,8 @@ private:
     qreal d_ = 0;
     qreal r_ = 0;
 
+    qreal xForCalculation = 0;
+
     void drawCoordNetAndAxes();
     void drawGraph();
     void drawLinear(QTransform& transform);
@@ -68,8 +76,11 @@ private:
     void drawExp(QTransform& transform);
     void drawArbitrary(QTransform& transform);
 
-    qreal quadraticEquation(qreal x);
-    qreal cubicEquation(qreal x);
+    qreal linearFunction(qreal x);
+    qreal quadraticFunction(qreal x);
+    qreal cubicFunction(qreal x);
+    qreal circleFuntion(qreal x);
+    qreal ellipseFunction(qreal x);
     qreal arbitraryFunction(qreal x);
 };
 
