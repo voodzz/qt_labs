@@ -12,7 +12,7 @@ QString Item::getModel() {
     return model_;
 }
 
-qint32 Item::getCode() {
+quint32 Item::getCode() {
     return code_;
 }
 
@@ -20,7 +20,7 @@ qreal Item::getPrice() {
     return price_;
 }
 
-qint32 Item::getQuantity() {
+quint32 Item::getQuantity() {
     return quantity_;
 }
 
@@ -40,7 +40,7 @@ void Item::setModel(const QString &model) {
     model_ = model;
 }
 
-void Item::setCode(qint32 code) {
+void Item::setCode(quint32 code) {
     code_ = code;
 }
 
@@ -48,7 +48,7 @@ void Item::setPrice(qreal price) {
     price_ = price;
 }
 
-void Item::setQuantity(qint32 quantity) {
+void Item::setQuantity(quint32 quantity) {
     quantity_ = quantity;
 }
 

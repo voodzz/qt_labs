@@ -6,7 +6,7 @@
 class Item {
 public:
     Item() = default;
-    Item(QString group, QString name, QString model, qint32 code, qreal price, qint32 quantity) :
+    Item(QString group, QString name, QString model, quint32 code, qreal price, quint32 quantity) :
         group_(group), name_(name), model_(model), code_(code), price_(price), quantity_(quantity) {};
     ~Item() = default;
 
@@ -19,27 +19,27 @@ public:
     QString getGroup();
     QString getName();
     QString getModel();
-    qint32 getCode();
+    quint32 getCode();
     qreal getPrice();
-    qint32 getQuantity();
+    quint32 getQuantity();
     bool getInStock();
 
     // setters
     void setGroup(const QString& group);
     void setName(const QString& name);
     void setModel(const QString& model);
-    void setCode (qint32 code);
+    void setCode (quint32 code);
     void setPrice (qreal price);
-    void setQuantity(qint32 quantity);
+    void setQuantity(quint32 quantity);
     void setInStock(bool inStock);
 
 private:
     QString group_;
     QString name_;
     QString model_;
-    qint32 code_;
+    quint32 code_;
     qreal price_;
-    qint32 quantity_;
+    quint32 quantity_;
     bool inStock_ = false;
 };
 
