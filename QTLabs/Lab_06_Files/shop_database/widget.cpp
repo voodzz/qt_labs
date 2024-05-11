@@ -8,6 +8,7 @@
 Widget::Widget(QWidget *parent) : QWidget(parent), ui(new Ui::Widget) {
     ui->setupUi(this);
     setFixedSize(1280, 720);
+    ui->textEdit->setFontPointSize(10);
 }
 
 Widget::~Widget()
@@ -28,7 +29,7 @@ void Widget::on_addButton_clicked() {
                 quantity += ui->quantityLineEdit->text().toInt();
                 item->setQuantity(quantity);
                 auto JSONobject = itemsJSON_[index].toObject();
-                JSONobject["Количество"] = quantity;
+                JSONobject["Quantity"] = quantity;
                 itemsJSON_[index] = JSONobject;
 
                 // Записываем в .json файл
@@ -37,7 +38,7 @@ void Widget::on_addButton_clicked() {
                 qDebug() << "JSON data to be written:" << jsonString;
                 QString filePath = "C:/Task_Bar/Two/Studying/Programming/qt_labs/QTLabs/Lab_06_Files/shop_database/data.json";
                 QFile file(filePath);
-                if (!file.open(QIODevice::WriteOnly)) {
+                if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
                     qDebug() << "Failed to open file for writing:" << file.errorString();
                     return;
                 }
@@ -52,29 +53,29 @@ void Widget::on_addButton_clicked() {
     Item* newItem = new Item;
 
     newItem->setGroup(ui->groupLineEdit->text());
-    newItemJSON["Группа"] = ui->groupLineEdit->text();
+    newItemJSON["Group"] = ui->groupLineEdit->text();
 
     newItem->setName(ui->nameLineEdit->text());
-    newItemJSON["Наименование продукции"] = ui->nameLineEdit->text();
+    newItemJSON["Name"] = ui->nameLineEdit->text();
 
     newItem->setModel(ui->modelLineEdit->text());
-    newItemJSON["Модель продукции"] = ui->modelLineEdit->text();
+    newItemJSON["Model"] = ui->modelLineEdit->text();
 
     newItem->setCode(ui->codeLineEdit->text().toInt());
-    newItemJSON["Код продукции"] = ui->codeLineEdit->text().toInt();
+    newItemJSON["Code"] = ui->codeLineEdit->text().toInt();
 
     newItem->setPrice(ui->priceLineEdit->text().toDouble());
-    newItemJSON["Цена"] = ui->priceLineEdit->text().toDouble();
+    newItemJSON["Price"] = ui->priceLineEdit->text().toDouble();
 
     newItem->setQuantity(ui->quantityLineEdit->text().toInt());
-    newItemJSON["Количество"] = ui->quantityLineEdit->text().toInt();
+    newItemJSON["Quantity"] = ui->quantityLineEdit->text().toInt();
 
     if (newItem->getQuantity() == 0) {
         newItem->setInStock(0);
-        newItemJSON["В наличии"] = false;
+        newItemJSON["In stock"] = false;
     } else {
         newItem->setInStock(1);
-        newItemJSON["В наличии"] = true;
+        newItemJSON["In stock"] = true;
     }
 
     items_.push_back(newItem);
@@ -83,14 +84,14 @@ void Widget::on_addButton_clicked() {
     // Записываем в .json файл
     QJsonDocument jsonDocument(itemsJSON_);
     QByteArray jsonString = jsonDocument.toJson();
+    //QString jsonStringUtf8 = QString::fromUtf8(jsonString);
     qDebug() << "JSON data to be written:" << jsonString;
     QFile file(filePath_);
-    if (!file.open(QIODevice::WriteOnly)) {
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
         qDebug() << "Failed to open file for writing:" << file.errorString();
         return;
     }
-    QTextStream out(&file);
-    out << jsonString;
+    file.write(jsonString);
     file.close();
 }
 
@@ -98,29 +99,62 @@ void Widget::on_addButton_clicked() {
 void Widget::on_clearButton_clicked() {
     ui->textEdit->clear();
     QFile file(filePath_);
-    QByteArray emptyData;
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+        qDebug() << "Failed to open file for writing:" << file.errorString();
+        return;
+    }
+    QByteArray emptyData = "";
     file.write(emptyData);
     file.close();
 }
 
 void Widget::on_openListButton_clicked() {
     QFile file(filePath_);
-    QTextCodec *codec = QTextCodec::codecForName("Windows-1251");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         qDebug() << "Failed to open file for reading:" << file.errorString();
         return;
     }
 
-    // Read JSON data from file
-    QByteArray jsonData = codec->toUnicode(file.readAll()).toUtf8();
+    // Читаем из файла
+    QByteArray jsonData = file.readAll();
     file.close();
 
-    // Parse JSON data
     QJsonParseError parseError;
-    QJsonDocument jsonDoc = QJsonDocument::fromJson(jsonData, &parseError);
+    QJsonDocument jsonDocument = QJsonDocument::fromJson(jsonData, &parseError);
     if (parseError.error != QJsonParseError::NoError) {
         qDebug() << "Failed to parse JSON:" << parseError.errorString();
         return;
     }
+
+    // QString json = QString::fromUtf8(jsonData);
+    // ui->textEdit->setText(json);
+
+    itemsJSON_ = jsonDocument.array();
+    QString str = "";
+    for (const auto& tmp : itemsJSON_) {
+        auto item = tmp.toObject();
+        Item* newItem = new Item;
+        newItem->setGroup(item["Group"].toString());
+        str += "Group: " + item["Group"].toString() + "\n";
+        newItem->setCode(item["Code"].toInt());
+        str += "Code: " + QString::number(item["Code"].toInt()) + "\n";
+        newItem->setName(item["Name"].toString());
+        str += "Name: " +item["Name"].toString() + "\n";
+        newItem->setModel(item["Model"].toString());
+        str += "Model: " +item["Model"].toString() + "\n";
+        newItem->setPrice(item["Price"].toDouble());
+        str += "Price: " + QString::number(item["Price"].toDouble()) + "\n";
+        newItem->setQuantity(item["Quantity"].toInt());
+        str += "Quantity: " + QString::number(item["Quantity"].toInt()) + "\n";
+        newItem->setInStock(item["In stock"].toBool());
+        if (item["In stock"].toBool()) {
+            str += "In stock: true\n";
+        } else {
+            str += "In stock: false\n";
+        }
+        items_.push_back(newItem);
+        str += "\n";
+    }
+    ui->textEdit->setText(str);
 }
 

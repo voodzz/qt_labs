@@ -1,29 +1,56 @@
 [
     {
-        "В наличии": false,
-        "Группа": "Cars",
-        "Код продукции": 111111,
-        "Количество": 0,
-        "Модель продукции": "F40",
-        "Наименование продукции": "Ferrari",
-        "Цена": 1450000
+        "Code": 123456,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "F40",
+        "Name": "Ferrari",
+        "Price": 1250000,
+        "Quantity": 4
     },
     {
-        "В наличии": false,
-        "Группа": "Cars",
-        "Код продукции": 111111,
-        "Количество": 0,
-        "Модель продукции": "F1",
-        "Наименование продукции": "McLaren",
-        "Цена": 1250000
+        "Code": 123457,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "GT",
+        "Name": "Ford",
+        "Price": 100000,
+        "Quantity": 4
     },
     {
-        "В наличии": true,
-        "Группа": "Cars",
-        "Код продукции": 111111,
-        "Количество": 3,
-        "Модель продукции": "911",
-        "Наименование продукции": "Porsche",
-        "Цена": 250000
+        "Code": 123458,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "Senna",
+        "Name": "McLaren",
+        "Price": 1200000,
+        "Quantity": 3
+    },
+    {
+        "Code": 1,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "F1",
+        "Name": "McLaren",
+        "Price": 1250000,
+        "Quantity": 1
+    },
+    {
+        "Code": 11,
+        "Group": "Cars",
+        "In stock": false,
+        "Model": "RB20",
+        "Name": "Red Bull",
+        "Price": 3250000,
+        "Quantity": 0
+    },
+    {
+        "Code": 12,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "911",
+        "Name": "Porsche",
+        "Price": 325000,
+        "Quantity": 23
     }
 ]

@@ -24,7 +24,7 @@
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>501</width>
+     <width>351</width>
      <height>581</height>
     </rect>
    </property>
@@ -36,7 +36,7 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>481</width>
+      <width>331</width>
       <height>561</height>
      </rect>
     </property>
@@ -55,7 +55,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Удалить из списка</string>
+        <string>Delete from the list</string>
        </property>
       </widget>
      </item>
@@ -89,7 +89,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Наименование продукции</string>
+        <string>Name</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -139,7 +139,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Очистить список</string>
+        <string>Clear the list</string>
        </property>
       </widget>
      </item>
@@ -165,7 +165,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Группа товаров</string>
+        <string>Group</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -180,7 +180,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Наименование модели</string>
+        <string>Model</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -210,7 +210,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Цена</string>
+        <string>Price</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -225,7 +225,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Наличие</string>
+        <string>Stock</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -240,7 +240,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Количество</string>
+        <string>Quantity</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -269,12 +269,12 @@
        </property>
        <item>
         <property name="text">
-         <string>В наличии</string>
+         <string>In stock</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>Нет в наличии</string>
+         <string>Not in stock</string>
         </property>
        </item>
       </widget>
@@ -293,7 +293,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Поиск</string>
+        <string>Search</string>
        </property>
       </widget>
      </item>
@@ -311,7 +311,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Добавить в список</string>
+        <string>Add to the list</string>
        </property>
       </widget>
      </item>
@@ -338,7 +338,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Код товара</string>
+        <string>Code</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -389,7 +389,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Открыть список</string>
+        <string>Open the list</string>
        </property>
       </widget>
      </item>
@@ -401,7 +401,7 @@
     <rect>
      <x>10</x>
      <y>610</y>
-     <width>501</width>
+     <width>351</width>
      <height>91</height>
     </rect>
    </property>
@@ -413,7 +413,7 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>481</width>
+      <width>331</width>
       <height>71</height>
      </rect>
     </property>
@@ -426,7 +426,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Сортировать по </string>
+        <string>Sort by</string>
        </property>
       </widget>
      </item>
@@ -445,22 +445,22 @@
        </property>
        <item>
         <property name="text">
-         <string>наименованию</string>
+         <string>name</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>коду</string>
+         <string>code</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>цене (возрастание)</string>
+         <string>price (ascending)</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>цене (убывание)</string>
+         <string>price (descending)</string>
         </property>
        </item>
        <item>
@@ -484,7 +484,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Сортировать</string>
+        <string>Sort</string>
        </property>
       </widget>
      </item>
@@ -494,9 +494,9 @@
   <widget class="QTextEdit" name="textEdit">
    <property name="geometry">
     <rect>
-     <x>520</x>
+     <x>370</x>
      <y>10</y>
-     <width>741</width>
+     <width>891</width>
      <height>691</height>
     </rect>
    </property>
