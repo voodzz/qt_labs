@@ -16,30 +16,30 @@ public:
     Item& operator =(Item&& other) = default;
 
     // getters
-    QString getGroup();
-    QString getName();
-    QString getModel();
-    quint32 getCode();
-    qreal getPrice();
-    quint32 getQuantity();
-    bool getInStock();
+    QString getGroup() const;
+    QString getName() const;
+    QString getModel() const;
+    int getCode() const;
+    qreal getPrice() const;
+    int getQuantity() const;
+    bool getInStock() const;
 
     // setters
     void setGroup(const QString& group);
     void setName(const QString& name);
     void setModel(const QString& model);
-    void setCode (quint32 code);
+    void setCode (int code);
     void setPrice (qreal price);
-    void setQuantity(quint32 quantity);
+    void setQuantity(int quantity);
     void setInStock(bool inStock);
 
 private:
     QString group_;
     QString name_;
     QString model_;
-    quint32 code_;
+    int code_;
     qreal price_;
-    quint32 quantity_;
+    int quantity_;
     bool inStock_ = false;
 };
 

@@ -24,12 +24,21 @@ private slots:
     void on_addButton_clicked();
     void on_clearButton_clicked();
     void on_openListButton_clicked();
+    void on_stockButton_clicked();
+    void on_searchButton_clicked();
+    void on_deleteButton_clicked();
+    void on_searchAndDeleteRadioButton_toggled(bool checked);
+    void on_sortButton_clicked();
 
 private:
     Ui::Widget *ui;
     QList<Item*> items_;
     QJsonArray itemsJSON_;
-    const QString filePath_ = "C:/Task_Bar/Two/Studying/Programming/qt_labs/QTLabs/Lab_06_Files/shop_database/data.json";
-
+    const QString FILE_PATH = "C:/Task_Bar/Two/Studying/Programming/qt_labs/QTLabs/Lab_06_Files/shop_database/data.json";
+    void print();
+    QString lastSlotInvoked;
+    bool compareItems(const Item* a, const Item* b);
+    void writeToFile();
 };
+
 #endif // WIDGET_H

@@ -6,7 +6,7 @@
         "Model": "F40",
         "Name": "Ferrari",
         "Price": 1250000,
-        "Quantity": 4
+        "Quantity": 6
     },
     {
         "Code": 123457,
@@ -52,5 +52,491 @@
         "Name": "Porsche",
         "Price": 325000,
         "Quantity": 23
+    },
+    {
+        "Code": 13,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "GTR",
+        "Name": "Nissan",
+        "Price": 150000,
+        "Quantity": 15
+    },
+    {
+        "Code": 14,
+        "Group": "Cars",
+        "In stock": false,
+        "Model": "Civic",
+        "Name": "Honda",
+        "Price": 30000,
+        "Quantity": 0
+    },
+    {
+        "Code": 15,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "Mustang",
+        "Name": "Ford",
+        "Price": 75000,
+        "Quantity": 10
+    },
+    {
+        "Code": 16,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "Challenger",
+        "Name": "Dodge",
+        "Price": 65000,
+        "Quantity": 18
+    },
+    {
+        "Code": 17,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "Corvette",
+        "Name": "Chevrolet",
+        "Price": 85000,
+        "Quantity": 6
+    },
+    {
+        "Code": 18,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "Camaro",
+        "Name": "Chevrolet",
+        "Price": 70000,
+        "Quantity": 12
+    },
+    {
+        "Code": 19,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "Golf GTI",
+        "Name": "Volkswagen",
+        "Price": 35000,
+        "Quantity": 20
+    },
+    {
+        "Code": 20,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "X5",
+        "Name": "BMW",
+        "Price": 80000,
+        "Quantity": 7
+    },
+    {
+        "Code": 21,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "Aventador",
+        "Name": "Lamborghini",
+        "Price": 500000,
+        "Quantity": 2
+    },
+    {
+        "Code": 22,
+        "Group": "Cars",
+        "In stock": false,
+        "Model": "Veyron",
+        "Name": "Bugatti",
+        "Price": 2000000,
+        "Quantity": 0
+    },
+    {
+        "Code": 23,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "Cullinan",
+        "Name": "Rolls-Royce",
+        "Price": 350000,
+        "Quantity": 5
+    },
+    {
+        "Code": 24,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "DB11",
+        "Name": "Aston Martin",
+        "Price": 250000,
+        "Quantity": 9
+    },
+    {
+        "Code": 25,
+        "Group": "Cars",
+        "In stock": false,
+        "Model": "LaFerrari",
+        "Name": "Ferrari",
+        "Price": 3000000,
+        "Quantity": 0
+    },
+    {
+        "Code": 26,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "M5",
+        "Name": "BMW",
+        "Price": 90000,
+        "Quantity": 11
+    },
+    {
+        "Code": 27,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "Cayenne",
+        "Name": "Porsche",
+        "Price": 95000,
+        "Quantity": 14
+    },
+    {
+        "Code": 28,
+        "Group": "Cars",
+        "In stock": false,
+        "Model": "Fiesta",
+        "Name": "Ford",
+        "Price": 20000,
+        "Quantity": 0
+    },
+    {
+        "Code": 29,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "Ranger",
+        "Name": "Ford",
+        "Price": 35000,
+        "Quantity": 17
+    },
+    {
+        "Code": 30,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "Wrangler",
+        "Name": "Jeep",
+        "Price": 40000,
+        "Quantity": 16
+    },
+    {
+        "Code": 31,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "A6",
+        "Name": "Audi",
+        "Price": 70000,
+        "Quantity": 13
+    },
+    {
+        "Code": 32,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "XC90",
+        "Name": "Volvo",
+        "Price": 75000,
+        "Quantity": 19
+    },
+    {
+        "Code": 33,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "F-150",
+        "Name": "Ford",
+        "Price": 45000,
+        "Quantity": 22
+    },
+    {
+        "Code": 34,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "Navigator",
+        "Name": "Lincoln",
+        "Price": 85000,
+        "Quantity": 5
+    },
+    {
+        "Code": 35,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "ATS-V",
+        "Name": "Cadillac",
+        "Price": 65000,
+        "Quantity": 8
+    },
+    {
+        "Code": 36,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "Focus",
+        "Name": "Ford",
+        "Price": 25000,
+        "Quantity": 15
+    },
+    {
+        "Code": 37,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "Charger",
+        "Name": "Dodge",
+        "Price": 45000,
+        "Quantity": 20
+    },
+    {
+        "Code": 38,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "Yukon",
+        "Name": "GMC",
+        "Price": 65000,
+        "Quantity": 7
+    },
+    {
+        "Code": 39,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "Grand Cherokee",
+        "Name": "Jeep",
+        "Price": 50000,
+        "Quantity": 10
+    },
+    {
+        "Code": 40,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "GLA",
+        "Name": "Mercedes-Benz",
+        "Price": 35000,
+        "Quantity": 12
+    },
+    {
+        "Code": 41,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "Escalade",
+        "Name": "Cadillac",
+        "Price": 95000,
+        "Quantity": 4
+    },
+    {
+        "Code": 42,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "Civic Type R",
+        "Name": "Honda",
+        "Price": 35000,
+        "Quantity": 9
+    },
+    {
+        "Code": 43,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "Durango",
+        "Name": "Dodge",
+        "Price": 55000,
+        "Quantity": 6
+    },
+    {
+        "Code": 44,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "A5",
+        "Name": "Audi",
+        "Price": 60000,
+        "Quantity": 18
+    },
+    {
+        "Code": 45,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "S60",
+        "Name": "Volvo",
+        "Price": 45000,
+        "Quantity": 14
+    },
+    {
+        "Code": 46,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "GLC",
+        "Name": "Mercedes-Benz",
+        "Price": 40000,
+        "Quantity": 16
+    },
+    {
+        "Code": 47,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "Range Rover",
+        "Name": "Land Rover",
+        "Price": 100000,
+        "Quantity": 3
+    },
+    {
+        "Code": 48,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "Stinger",
+        "Name": "Kia",
+        "Price": 40000,
+        "Quantity": 11
+    },
+    {
+        "Code": 49,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "CT5",
+        "Name": "Cadillac",
+        "Price": 55000,
+        "Quantity": 8
+    },
+    {
+        "Code": 50,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "X7",
+        "Name": "BMW",
+        "Price": 90000,
+        "Quantity": 5
+    },
+    {
+        "Code": 51,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "Cherokee",
+        "Name": "Jeep",
+        "Price": 45000,
+        "Quantity": 9
+    },
+    {
+        "Code": 52,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "GLB",
+        "Name": "Mercedes-Benz",
+        "Price": 38000,
+        "Quantity": 13
+    },
+    {
+        "Code": 53,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "CX-9",
+        "Name": "Mazda",
+        "Price": 45000,
+        "Quantity": 6
+    },
+    {
+        "Code": 54,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "MDX",
+        "Name": "Acura",
+        "Price": 55000,
+        "Quantity": 10
+    },
+    {
+        "Code": 55,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "A8",
+        "Name": "Audi",
+        "Price": 85000,
+        "Quantity": 4
+    },
+    {
+        "Code": 56,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "S-Class",
+        "Name": "Mercedes-Benz",
+        "Price": 100000,
+        "Quantity": 3
+    },
+    {
+        "Code": 57,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "Discovery",
+        "Name": "Land Rover",
+        "Price": 90000,
+        "Quantity": 7
+    },
+    {
+        "Code": 58,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "QX60",
+        "Name": "Infiniti",
+        "Price": 55000,
+        "Quantity": 5
+    },
+    {
+        "Code": 59,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "Q7",
+        "Name": "Audi",
+        "Price": 75000,
+        "Quantity": 2
+    },
+    {
+        "Code": 60,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "Q5",
+        "Name": "Audi",
+        "Price": 60000,
+        "Quantity": 8
+    },
+    {
+        "Code": 61,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "Fiesta ST",
+        "Name": "Ford",
+        "Price": 28000,
+        "Quantity": 15
+    },
+    {
+        "Code": 62,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "Veloster N",
+        "Name": "Hyundai",
+        "Price": 30000,
+        "Quantity": 10
+    },
+    {
+        "Code": 63,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "BRZ",
+        "Name": "Subaru",
+        "Price": 29000,
+        "Quantity": 8
+    },
+    {
+        "Code": 64,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "Tundra",
+        "Name": "Toyota",
+        "Price": 40000,
+        "Quantity": 6
+    },
+    {
+        "Code": 65,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "Ghibli",
+        "Name": "Maserati",
+        "Price": 80000,
+        "Quantity": 4
+    },
+    {
+        "Code": 66,
+        "Group": "Cars",
+        "In stock": true,
+        "Model": "Supra",
+        "Name": "Toyota",
+        "Price": 50000,
+        "Quantity": 3
     }
 ]

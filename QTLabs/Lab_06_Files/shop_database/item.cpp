@@ -1,30 +1,30 @@
 #include "item.h"
 
-QString Item::getGroup() {
+QString Item::getGroup() const{
     return group_;
 }
 
-QString Item::getName() {
+QString Item::getName() const{
     return name_;
 }
 
-QString Item::getModel() {
+QString Item::getModel() const{
     return model_;
 }
 
-quint32 Item::getCode() {
+int Item::getCode() const{
     return code_;
 }
 
-qreal Item::getPrice() {
+qreal Item::getPrice() const{
     return price_;
 }
 
-quint32 Item::getQuantity() {
+int Item::getQuantity() const{
     return quantity_;
 }
 
-bool Item::getInStock() {
+bool Item::getInStock() const{
     return inStock_;
 }
 
@@ -40,7 +40,7 @@ void Item::setModel(const QString &model) {
     model_ = model;
 }
 
-void Item::setCode(quint32 code) {
+void Item::setCode(int code) {
     code_ = code;
 }
 
@@ -48,7 +48,7 @@ void Item::setPrice(qreal price) {
     price_ = price;
 }
 
-void Item::setQuantity(quint32 quantity) {
+void Item::setQuantity(int quantity) {
     quantity_ = quantity;
 }
 
