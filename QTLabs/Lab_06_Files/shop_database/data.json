@@ -538,5 +538,384 @@
         "Name": "Toyota",
         "Price": 50000,
         "Quantity": 3
-    }
-]
+    },
+    {
+        "Code": 70,
+        "Group": "Motorcycles",
+        "In stock": true,
+        "Model": "Ninja",
+        "Name": "Kawasaki",
+        "Price": 8000,
+        "Quantity": 20
+     },
+     {
+        "Code": 71,
+        "Group": "Motorcycles",
+        "In stock": false,
+        "Model": "CBR600RR",
+        "Name": "Honda",
+        "Price": 9500,
+        "Quantity": 0
+     },
+     {
+        "Code": 72,
+        "Group": "Motorcycles",
+        "In stock": true,
+        "Model": "YZF-R6",
+        "Name": "Yamaha",
+        "Price": 9000,
+        "Quantity": 12
+     },
+     {
+        "Code": 73,
+        "Group": "Motorcycles",
+        "In stock": true,
+        "Model": "Ducati Monster",
+        "Name": "Ducati",
+        "Price": 11000,
+        "Quantity": 10
+     },
+     {
+        "Code": 74,
+        "Group": "Motorcycles",
+        "In stock": false,
+        "Model": "MT-09",
+        "Name": "Yamaha",
+        "Price": 9500,
+        "Quantity": 0
+     },
+     {
+        "Code": 75,
+        "Group": "Motorcycles",
+        "In stock": true,
+        "Model": "GSX-R750",
+        "Name": "Suzuki",
+        "Price": 10500,
+        "Quantity": 14
+     },
+     {
+        "Code": 76,
+        "Group": "Motorcycles",
+        "In stock": true,
+        "Model": "Panigale V4",
+        "Name": "Ducati",
+        "Price": 25000,
+        "Quantity": 8
+     },
+     {
+        "Code": 77,
+        "Group": "Motorcycles",
+        "In stock": true,
+        "Model": "R1",
+        "Name": "Yamaha",
+        "Price": 12000,
+        "Quantity": 9
+     },
+     {
+        "Code": 78,
+        "Group": "Motorcycles",
+        "In stock": true,
+        "Model": "CBR1000RR",
+        "Name": "Honda",
+        "Price": 15000,
+        "Quantity": 7
+     },
+     {
+        "Code": 79,
+        "Group": "Motorcycles",
+        "In stock": true,
+        "Model": "Ninja ZX-10R",
+        "Name": "Kawasaki",
+        "Price": 14500,
+        "Quantity": 6
+     },
+     {
+        "Code": 80,
+        "Group": "Motorcycles",
+        "In stock": true,
+        "Model": "Diavel",
+        "Name": "Ducati",
+        "Price": 18000,
+        "Quantity": 5
+     },
+     {
+        "Code": 81,
+        "Group": "Motorcycles",
+        "In stock": false,
+        "Model": "Africa Twin",
+        "Name": "Honda",
+        "Price": 16000,
+        "Quantity": 0
+     },
+     {
+        "Code": 82,
+        "Group": "Motorcycles",
+        "In stock": true,
+        "Model": "Street Triple",
+        "Name": "Triumph",
+        "Price": 11500,
+        "Quantity": 13
+     },
+     {
+        "Code": 83,
+        "Group": "Motorcycles",
+        "In stock": true,
+        "Model": "S1000RR",
+        "Name": "BMW",
+        "Price": 17000,
+        "Quantity": 4
+     },
+     {
+        "Code": 84,
+        "Group": "Motorcycles",
+        "In stock": false,
+        "Model": "MT-07",
+        "Name": "Yamaha",
+        "Price": 8000,
+        "Quantity": 0
+     },
+     {
+        "Code": 85,
+        "Group": "Motorcycles",
+        "In stock": true,
+        "Model": "Sportster",
+        "Name": "Harley-Davidson",
+        "Price": 12000,
+        "Quantity": 3
+     },
+     {
+        "Code": 86,
+        "Group": "Motorcycles",
+        "In stock": true,
+        "Model": "Daytona 675",
+        "Name": "Triumph",
+        "Price": 13000,
+        "Quantity": 8
+     },
+     {
+        "Code": 87,
+        "Group": "Motorcycles",
+        "In stock": true,
+        "Model": "GSX-S750",
+        "Name": "Suzuki",
+        "Price": 9500,
+        "Quantity": 10
+     },
+     {
+        "Code": 88,
+        "Group": "Motorcycles",
+        "In stock": true,
+        "Model": "Iron 883",
+        "Name": "Harley-Davidson",
+        "Price": 11000,
+        "Quantity": 6
+     },
+     {
+        "Code": 89,
+        "Group": "Motorcycles",
+        "In stock": true,
+        "Model": "Ninja 650",
+        "Name": "Kawasaki",
+        "Price": 8000,
+        "Quantity": 12
+     },
+     {
+        "Code": 90,
+        "Group": "Motorcycles",
+        "In stock": true,
+        "Model": "XDiavel",
+        "Name": "Ducati",
+        "Price": 20000,
+        "Quantity": 5
+     },
+     {
+        "Code": 91,
+        "Group": "Motorcycles",
+        "In stock": true,
+        "Model": "V-Strom 650",
+        "Name": "Suzuki",
+        "Price": 9000,
+        "Quantity": 9
+     },
+     {
+        "Code": 92,
+        "Group": "Motorcycles",
+        "In stock": false,
+        "Model": "CB500F",
+        "Name": "Honda",
+        "Price": 6500,
+        "Quantity": 0
+     },
+     {
+        "Code": 93,
+        "Group": "Motorcycles",
+        "In stock": true,
+        "Model": "Versys 650",
+        "Name": "Kawasaki",
+        "Price": 8500,
+        "Quantity": 11
+     },
+     {
+        "Code": 94,
+        "Group": "Motorcycles",
+        "In stock": true,
+        "Model": "XR650L",
+        "Name": "Honda",
+        "Price": 7500,
+        "Quantity": 10
+     },
+     {
+        "Code": 95,
+        "Group": "Motorcycles",
+        "In stock": true,
+        "Model": "CBR300R",
+        "Name": "Honda",
+        "Price": 4500,
+        "Quantity": 20
+     },
+     {
+        "Code": 96,
+        "Group": "Motorcycles",
+        "In stock": false,
+        "Model": "G310R",
+        "Name": "BMW",
+        "Price": 5500,
+        "Quantity": 0
+     },
+     {
+        "Code": 97,
+        "Group": "Motorcycles",
+        "In stock": true,
+        "Model": "MT-03",
+        "Name": "Yamaha",
+        "Price": 5000,
+        "Quantity": 15
+     },
+     {
+        "Code": 98,
+        "Group": "Motorcycles",
+        "In stock": true,
+        "Model": "SV650",
+        "Name": "Suzuki",
+        "Price": 7000,
+        "Quantity": 13
+     },
+     {
+        "Code": 99,
+        "Group": "Motorcycles",
+        "In stock": true,
+        "Model": "Street 750",
+        "Name": "Harley-Davidson",
+        "Price": 9000,
+        "Quantity": 8
+     },
+     {
+        "Code": 99,
+        "Group": "Racing Bicycles",
+        "In stock": true,
+        "Model": "Madone SLR 9 Disc",
+        "Name": "Trek",
+        "Price": 10000,
+        "Quantity": 8
+     },
+     {
+        "Code": 100,
+        "Group": "Racing Bicycles",
+        "In stock": true,
+        "Model": "S-Works Tarmac SL7",
+        "Name": "Specialized",
+        "Price": 11000,
+        "Quantity": 6
+     },
+     {
+        "Code": 101,
+        "Group": "Racing Bicycles",
+        "In stock": true,
+        "Model": "R5",
+        "Name": "Cervélo",
+        "Price": 9500,
+        "Quantity": 7
+     },
+     {
+        "Code": 102,
+        "Group": "Racing Bicycles",
+        "In stock": true,
+        "Model": "TCR Advanced SL 0 Disc",
+        "Name": "Giant",
+        "Price": 10500,
+        "Quantity": 5
+     },
+     {
+        "Code": 103,
+        "Group": "Racing Bicycles",
+        "In stock": true,
+        "Model": "Ultimate CF Evo 10.0 SL",
+        "Name": "Canyon",
+        "Price": 12000,
+        "Quantity": 4
+     },
+     {
+        "Code": 104,
+        "Group": "Racing Bicycles",
+        "In stock": true,
+        "Model": "Oltre XR4",
+        "Name": "Bianchi",
+        "Price": 11500,
+        "Quantity": 3
+     },
+     {
+        "Code": 105,
+        "Group": "Racing Bicycles",
+        "In stock": true,
+        "Model": "Dogma F12",
+        "Name": "Pinarello",
+        "Price": 12500,
+        "Quantity": 2
+     },
+     {
+        "Code": 106,
+        "Group": "Racing Bicycles",
+        "In stock": true,
+        "Model": "SuperSix EVO Hi-MOD",
+        "Name": "Cannondale",
+        "Price": 9750,
+        "Quantity": 6
+     },
+     {
+        "Code": 107,
+        "Group": "Racing Bicycles",
+        "In stock": true,
+        "Model": "Reacto 9000-E",
+        "Name": "Merida",
+        "Price": 10500,
+        "Quantity": 5
+     },
+     {
+        "Code": 108,
+        "Group": "Racing Bicycles",
+        "In stock": true,
+        "Model": "Emonda SLR 9 Disc",
+        "Name": "Trek",
+        "Price": 9900,
+        "Quantity": 7
+     },
+     {
+        "Code": 109,
+        "Group": "Racing Bicycles",
+        "In stock": true,
+        "Model": "Addict RC Ultimate",
+        "Name": "Scott",
+        "Price": 11200,
+        "Quantity": 4
+     },
+     {
+        "Code": 110,
+        "Group": "Racing Bicycles",
+        "In stock": true,
+        "Model": "Noah Fast",
+        "Name": "Ridley",
+        "Price": 10300,
+        "Quantity": 6
+     }
+ ]
+

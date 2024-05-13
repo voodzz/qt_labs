@@ -278,39 +278,56 @@ void Widget::on_searchAndDeleteRadioButton_toggled(bool checked) {
 
 void Widget::on_sortButton_clicked() {
     QList<Item*> tmp(items_);
+    QString group = ui->groupLineEdit->text();
+    for (int i = 0; i < items_.size(); ++i) {
+        if (items_[i]->getGroup() != group) {
+            items_.removeAt(i);
+            --i;
+        }
+    }
+    std::sort(items_.begin(), items_.end(), [this](const Item* a, const Item* b){
+        return compareItems(a, b);
+    });
+    print();
+    items_ = tmp;
+    tmp.clear();
+}
+
+void Widget::on_lessThanButton_clicked() {
+    QList<Item*> tmp(items_);
+    int value = ui->quantityLineEdit->text().toInt();
     if (lastSlotInvoked == "on_stockButton_clicked") {
         if (ui->inStockComboBox->currentIndex() == 0) {
             for (int i = 0; i < items_.size(); ++i) {
-                if (!items_[i]->getInStock()) {
+                if (items_[i]->getQuantity() >= value || items_[i]->getInStock() == false) {
                     items_.removeAt(i);
                     --i;
                 }
             }
-            std::sort(items_.begin(), items_.end(), [this](const Item* a, const Item* b) {
-                return compareItems(a, b);
-            });
             print();
             items_ = tmp;
             tmp.clear();
         } else {
             for (int i = 0; i < items_.size(); ++i) {
-                if (items_[i]->getInStock()) {
+                if (items_[i] ->getQuantity() >= value || items_[i]->getInStock() == true) {
                     items_.removeAt(i);
                     --i;
                 }
             }
-            std::sort(items_.begin(), items_.end(), [this](const Item* a, const Item* b) {
-                return compareItems(a, b);
-            });
             print();
             items_ = tmp;
             tmp.clear();
         }
     } else {
-        std::sort(items_.begin(), items_.end(), [this](const Item* a, const Item* b) {
-            return compareItems(a, b);
-        });
+        for (int i = 0; i < items_.size(); ++i) {
+            if (items_[i]->getQuantity() >= value) {
+                items_.removeAt(i);
+                --i;
+            }
+        }
         print();
+        items_ = tmp;
+        tmp.clear();
     }
 }
 

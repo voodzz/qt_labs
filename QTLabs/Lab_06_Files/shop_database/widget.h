@@ -30,6 +30,8 @@ private slots:
     void on_searchAndDeleteRadioButton_toggled(bool checked);
     void on_sortButton_clicked();
 
+    void on_lessThanButton_clicked();
+
 private:
     Ui::Widget *ui;
     QList<Item*> items_;
