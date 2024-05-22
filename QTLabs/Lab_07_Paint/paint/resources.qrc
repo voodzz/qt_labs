@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>icons/dropper.png</file>
+        <file>icons/eraser.png</file>
+        <file>icons/paint.png</file>
+        <file>icons/pen.png</file>
+        <file>icons/font-symbol-of-letter-a.png</file>
+        <file>icons/ellipse-outline-shape-variant.png</file>
+        <file>icons/rectangular-shape-outline.png</file>
+    </qresource>
+</RCC>
