@@ -61,6 +61,9 @@
         <property name="text">
          <string/>
         </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
        </widget>
       </item>
       <item row="0" column="21" rowspan="4">
@@ -89,6 +92,9 @@
         </property>
         <property name="text">
          <string/>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
         </property>
        </widget>
       </item>
@@ -153,6 +159,9 @@
         <property name="text">
          <string/>
         </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
        </widget>
       </item>
       <item row="1" column="0">
@@ -196,6 +205,10 @@
           <width>45</width>
           <height>45</height>
          </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+border: none;</string>
         </property>
         <property name="text">
          <string/>
@@ -253,6 +266,9 @@
         <property name="text">
          <string/>
         </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
        </widget>
       </item>
       <item row="4" column="8" colspan="15">
@@ -305,6 +321,9 @@
         <property name="text">
          <string/>
         </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
        </widget>
       </item>
       <item row="0" column="13" rowspan="3">
@@ -327,6 +346,9 @@
         <property name="text">
          <string/>
         </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
        </widget>
       </item>
       <item row="0" column="15" rowspan="3">
@@ -348,6 +370,9 @@
         </property>
         <property name="text">
          <string/>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
         </property>
        </widget>
       </item>
@@ -430,6 +455,9 @@
         </property>
         <property name="text">
          <string/>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
         </property>
        </widget>
       </item>
@@ -560,6 +588,9 @@
         <property name="text">
          <string/>
         </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
        </widget>
       </item>
       <item row="0" column="8" rowspan="2">
@@ -578,13 +609,16 @@
         </property>
         <property name="styleSheet">
          <string notr="true">background-color: rgb(0, 0, 0);
-</string>
+border: none;</string>
         </property>
         <property name="text">
          <string/>
         </property>
         <property name="checkable">
          <bool>true</bool>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
         </property>
        </widget>
       </item>
@@ -635,6 +669,9 @@
         </property>
         <property name="text">
          <string/>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
         </property>
        </widget>
       </item>
@@ -730,22 +767,69 @@
     <property name="title">
      <string>О программе</string>
     </property>
+    <addaction name="infoAction"/>
    </widget>
    <widget class="QMenu" name="menuFile">
     <property name="title">
      <string>Файл</string>
     </property>
+    <addaction name="newAction"/>
+    <addaction name="openAction"/>
+    <addaction name="saveAction"/>
+    <addaction name="saveAsAction"/>
    </widget>
    <widget class="QMenu" name="menuCLock">
     <property name="title">
      <string>Время работы приложения</string>
     </property>
+    <addaction name="clockAction"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuCLock"/>
    <addaction name="menuAbout"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="openAction">
+   <property name="text">
+    <string>Открыть</string>
+   </property>
+  </action>
+  <action name="saveAction">
+   <property name="text">
+    <string>Сохранить</string>
+   </property>
+  </action>
+  <action name="clockAction">
+   <property name="text">
+    <string>Часы</string>
+   </property>
+  </action>
+  <action name="infoAction">
+   <property name="text">
+    <string>Информация</string>
+   </property>
+  </action>
+  <action name="newAction">
+   <property name="text">
+    <string>Новый</string>
+   </property>
+  </action>
+  <action name="saveAsAction">
+   <property name="text">
+    <string>Сохранить как</string>
+   </property>
+  </action>
+  <action name="actionUndo">
+   <property name="text">
+    <string>Отменить</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Z</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::NoRole</enum>
+   </property>
+  </action>
  </widget>
  <resources>
   <include location="resources.qrc"/>
